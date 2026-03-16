@@ -20,6 +20,9 @@ RUN mkdir -p public/worlds public/universal_assets
 RUN cp -r /miniverse/packages/create-miniverse/templates/worlds/cozy-startup public/worlds/cozy-startup
 RUN cp -r /miniverse/packages/create-miniverse/templates/universal_assets/. public/universal_assets/
 
+# Override template world data with repo-tracked version (preserves editor changes)
+COPY public/ public/
+
 # Install dependencies and build
 RUN npm install
 RUN npm run build
