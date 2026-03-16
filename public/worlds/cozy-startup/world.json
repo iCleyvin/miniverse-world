@@ -375,18 +375,10 @@
         {
             "id": "ergonomic_chair",
             "x": 7,
-            "y": 10,
+            "y": 9,
             "w": 1,
             "h": 1,
-            "layer": "above",
-            "anchors": [
-                {
-                    "name": "ergonomic_chair_14_0",
-                    "ox": 0.5,
-                    "oy": 0,
-                    "type": "rest"
-                }
-            ]
+            "layer": "above"
         },
         {
             "id": "tall_potted_plant",
