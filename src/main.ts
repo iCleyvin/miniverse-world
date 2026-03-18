@@ -69,7 +69,10 @@ async function main() {
   const sceneConfig = buildSceneConfig(gridCols, gridRows, sceneData?.floor, sceneData?.tiles);
   const tileSize = 32;
 
-  const availableSprites: string[] = await fetch(`${SERVER_API}/citizens`).then(r => r.json()).catch(() => ['morty', 'dexter', 'nova', 'rio']);
+  const availableSprites: string[] = await fetch(`${SERVER_API}/citizens`)
+    .then(r => r.json())
+    .then(d => (Array.isArray(d) ? d : ['morty', 'dexter', 'nova', 'rio']))
+    .catch(() => ['morty', 'dexter', 'nova', 'rio']);
   const serverAgents: { agent: string; name: string }[] = await fetch(`${SERVER_API}/agents`)
     .then(r => r.json())
     .then((d: any) => d.agents ?? [])
